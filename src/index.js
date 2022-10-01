@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import { UserProvider } from './contexts/user.context';
 import { ProductsProvider } from './contexts/products.context';
+import { DropdownProvider } from './contexts/dropdown.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,9 @@ root.render(
     <BrowserRouter>
       <UserProvider>
         <ProductsProvider>
-          <App />
+          <DropdownProvider>
+            <App />
+          </DropdownProvider>
         </ProductsProvider>
       </UserProvider>
     </BrowserRouter>

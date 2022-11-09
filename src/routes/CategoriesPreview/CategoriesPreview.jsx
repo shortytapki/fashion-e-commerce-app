@@ -4,7 +4,6 @@ import CategoryPreview from '../../components/CategoryPreview/CategoryPreview';
 
 const CategoriesPreview = () => {
   const { categoriesMap } = useContext(CategoriesContext);
-  console.log(categoriesMap);
   const filteredMap = Object.keys(categoriesMap).filter((item) => {
     return !item.includes('_') && item !== 'metadata';
   });

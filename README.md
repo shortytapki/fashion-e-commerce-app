@@ -1,9 +1,6 @@
 # E-commerce app
 Educational react project
-## Usage
-Project is still in work. To see the project in action, clone this repo and execute 
-```
-npm install
-npm start
-```
+## Deploy
+Project is still in work. 
+Latest version can be found [here](https://timely-belekoy-f46dcd.netlify.app/shop).
 

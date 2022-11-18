@@ -78,7 +78,7 @@ const cartReducer = (state, action) => {
         ...state,
         cartCount: state.cartCount - payload.quantity,
         cartItems: cartItemRemoved,
-        cartTotal: countTotal(cartItemRemoved),
+        total: countTotal(cartItemRemoved),
       };
 
     default:

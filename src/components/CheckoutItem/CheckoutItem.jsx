@@ -10,14 +10,13 @@ import {
   Value,
 } from './CheckoutItem.styles';
 
-const CheckoutItem = ({ item }) => {
-  const { name, imageUrl, quantity, price } = item;
+const CheckoutItem = ({ cartItem }) => {
+  const { name, imageUrl, quantity, price } = cartItem;
   const { addItemToCart, removeItemFromCart, decreaseQuantity } =
     useContext(CartContext);
-
-  const removeHandler = () => removeItemFromCart(item);
-  const incrementHandler = () => addItemToCart(item);
-  const decrementHandler = () => decreaseQuantity(item);
+  const removeHandler = () => removeItemFromCart(cartItem);
+  const incrementHandler = () => addItemToCart(cartItem);
+  const decrementHandler = () => decreaseQuantity(cartItem);
   return (
     <CheckoutItemContainer>
       <ImageContainer>
@@ -25,12 +24,12 @@ const CheckoutItem = ({ item }) => {
       </ImageContainer>
       <BaseSpan> {name} </BaseSpan>
       <Quantity>
-        <Arrow onClick={removeHandler}>&#10094;</Arrow>
+        <Arrow onClick={decrementHandler}>&#10094;</Arrow>
         <Value>{quantity}</Value>
         <Arrow onClick={incrementHandler}>&#10095;</Arrow>
       </Quantity>
       <BaseSpan> {price}</BaseSpan>
-      <RemoveButton onClick={decrementHandler}>&#10005;</RemoveButton>
+      <RemoveButton onClick={removeHandler}>&#10005;</RemoveButton>
     </CheckoutItemContainer>
   );
 };

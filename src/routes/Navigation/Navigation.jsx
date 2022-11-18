@@ -19,7 +19,7 @@ import CartDropdown from '../../components/CartDropdown/CartDropdown';
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
-  const { isOpen } = useContext(CartContext);
+  const { isOpened } = useContext(CartContext);
 
   return (
     <>
@@ -38,7 +38,7 @@ const Navigation = () => {
           )}
           <CartIcon />
         </NavLinks>
-        {isOpen && <CartDropdown />}
+        {isOpened && <CartDropdown />}
       </NavigationContainer>
       <Outlet />
     </>

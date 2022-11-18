@@ -8,11 +8,12 @@ import { CartContext } from '../../contexts/cart.context';
 import { CartDropdownContainer, CartItems } from './CartDropdown.styles';
 
 const CartDropdown = () => {
-  const { setIsOpen, cartItems } = useContext(CartContext);
+  const { setIsOpened, cartItems } = useContext(CartContext);
+  console.log(cartItems);
   const navigate = useNavigate();
 
   const goToCheckout = () => {
-    setIsOpen(false);
+    setIsOpened(false);
     navigate('/checkout');
   };
 

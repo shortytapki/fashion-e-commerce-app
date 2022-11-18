@@ -45,7 +45,7 @@ const cartReducer = (state, action) => {
     cartItems.filter((item) => item.id !== productToRemove.id);
 
   const countTotal = (cartItems) =>
-    cartItems.reduce((acc, item) => acc + item.quantity, 0);
+    cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0);
 
   switch (type) {
     case CART_ACTIONS_TYPES.OPEN_CART:

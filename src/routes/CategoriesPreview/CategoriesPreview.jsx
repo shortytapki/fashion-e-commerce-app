@@ -1,9 +1,9 @@
-import { CategoriesContext } from '../../contexts/categories.context';
-import { useContext } from 'react';
 import CategoryPreview from '../../components/CategoryPreview/CategoryPreview';
+import { selectCategoriesMap } from '../../store/categories/category.select';
+import { useSelector } from 'react-redux';
 
 const CategoriesPreview = () => {
-  const { categoriesMap } = useContext(CategoriesContext);
+  const categoriesMap = useSelector(selectCategoriesMap);
   const filteredMap = Object.keys(categoriesMap).filter((item) => {
     return !item.includes('_') && item !== 'metadata';
   });
